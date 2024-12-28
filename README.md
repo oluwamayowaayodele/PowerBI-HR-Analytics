@@ -10,12 +10,12 @@ The analysis was conducted using Power BI, focusing on data importation, transfo
 
 ### Steps followed
 
-- Step 1 : Load data into Power BI desktop. Data split across multiple csv files.
-- Step 2 : Distinguish dimension tables from fact table by applying 'Dim' and 'Fact' prefixes to respective tables.
-- Step 3 : Create DimDate table using DimDate.txt DAX and connect to FactPerformanceRating table.
-- Step 4 : Establish inactive relationship between DimDate and DimEmployee, and further still DimEducationLevel to DimEmployee.
-- Step 5 : Provide context to JobSatisfaction, WorkLifeBalance, RelationshipSatisfaction and EnvironmentSatisfaction by DimSatisfiedLevel with EnvironmentSatisfaction as active relationship.
-- Step 6 : Provide context to SelfRating and ManagerRating columns by connecting with DimRatingLevel and establish SelfRating as active relationship.
+- Step 1 : Loaded data into Power BI desktop. Data split across multiple csv files.
+- Step 2 : Distinguished dimension tables from fact table by applying 'Dim' and 'Fact' prefixes to respective tables.
+- Step 3 : Created DimDate table using DimDate.txt DAX and connect to FactPerformanceRating table.
+- Step 4 : Established inactive relationship between DimDate and DimEmployee, in addition to DimEducationLevel to DimEmployee.
+- Step 5 : Provided context to JobSatisfaction, WorkLifeBalance, RelationshipSatisfaction and EnvironmentSatisfaction by connecting DimSatisfiedLevel with EnvironmentSatisfaction as active relationship.
+- Step 6 : Provided context to SelfRating and ManagerRating columns by connecting with DimRatingLevel and establishing SelfRating as active relationship.
 - Step 7 : Wrote the following DAX measures to begin Exploratory data analyses and provide high level insights for Overview Visualizations.
 
         - TotalEmployees -- DISTINCTCOUNT(DimEmployee[EmployeeID])
@@ -60,7 +60,7 @@ The analysis was conducted using Power BI, focusing on data importation, transfo
 - Step 17 : Moved to visualising experience outcomes at Atlas Labs. First created a JobSatisfaction measure to show employee responses over the years. 
 
         - JobSatisfaction = MAX(FactPerformanceRating[JobSatisfaction])
-- Step 18 : Created measures for the remaining satisfaction metrics without an active connection to DimSatisfiedLevel ('EnvironmentSatisfaction', 'RelationshipSatisfaction', 'WorkLifeBalance') using USERELATIONSHIP() function. Also created SelfRating and ManagerRating measures and visualised them by YEAR as well as including RatingLevel and SatisfactionLevel tables.
+- Step 18 : Created measures for the remaining satisfaction metrics without an active connection to DimSatisfiedLevel ('EnvironmentSatisfaction', 'RelationshipSatisfaction', 'WorkLifeBalance') using USERELATIONSHIP( ) function. Also created SelfRating and ManagerRating measures and visualised them by YEAR as well as including RatingLevel and SatisfactionLevel tables.
 
         - EnvironmentSatisfaction = CALCULATE(
                             MAX (   FactPerformanceRating[EnvironmentSatisfaction]  ),
@@ -84,7 +84,7 @@ The analysis was conducted using Power BI, focusing on data importation, transfo
 
 ![Atlas Labs HR Analytics2-3](https://github.com/user-attachments/assets/3853694d-d9f7-4b90-a22e-90bf475cf8d5)
         
-- Step 19 : Now moving to creating metrics around attrition at different points in time, use of the USERELATIONSHIP() function alongside HireDate helps with creating measures for InactiveEmployeesDate and ActiveEmployeesDate are created - these are used for creating % Attrition Date which shows attrition at different points in time.
+- Step 19 : Now moving to creating metrics around attrition at different points in time, use of the USERELATIONSHIP( ) function alongside HireDate helps with creating measures for InactiveEmployeesDate and ActiveEmployeesDate are created - these are used for creating % Attrition Date which shows attrition at different points in time.
 
         - EnvironmentSatisfaction = CALCULATE(
                             MAX (   FactPerformanceRating[EnvironmentSatisfaction]  ),
