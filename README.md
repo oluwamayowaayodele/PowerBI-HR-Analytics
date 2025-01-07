@@ -9,7 +9,7 @@ This project centres on people analytics Atlas Labs, a fictitious software compa
 The analysis was conducted using Power BI, focusing on data importation, transformation, modeling, and visualization to offer Atlas Lab's people team a platform to derive insights with respect to its employees.
 
 ### Steps followed
-## Modeling
+## Data modeling
 - Step 1 : Imported data into Power BI desktop. Data split across multiple csv files.
 - Step 2 : Distinguished dimension tables from fact table by applying 'Dim' and 'Fact' prefixes to respective tables.
 - Step 3 : Created DimDate table using DimDate.txt DAX and connect to FactPerformanceRating table.
