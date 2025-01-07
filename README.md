@@ -9,8 +9,8 @@ This project centres on people analytics Atlas Labs, a fictitious software compa
 The analysis was conducted using Power BI, focusing on data importation, transformation, modeling, and visualization to offer Atlas Lab's people team a platform to derive insights with respect to its employees.
 
 ### Steps followed
-
-- Step 1 : Loaded data into Power BI desktop. Data split across multiple csv files.
+## Modeling
+- Step 1 : Imported data into Power BI desktop. Data split across multiple csv files.
 - Step 2 : Distinguished dimension tables from fact table by applying 'Dim' and 'Fact' prefixes to respective tables.
 - Step 3 : Created DimDate table using DimDate.txt DAX and connect to FactPerformanceRating table.
 - Step 4 : Established inactive relationship between DimDate and DimEmployee, in addition to DimEducationLevel to DimEmployee.
@@ -23,6 +23,8 @@ The analysis was conducted using Power BI, focusing on data importation, transfo
         - InactiveEmployees -- InactiveEmployees = CALCULATE(COUNT(DimEmployee[Attrition]),DimEmployee[Attrition] = "Yes")
         - % Attrition Rate -- % Attrition Rate = CALCULATE(DIVIDE([InactiveEmployees],[TotalEmployees]))
         - TotalEmployeesDate -- TotalEmployeesDate = CALCULATE([TotalEmployees],USERELATIONSHIP(DimEmployee[HireDate],DimDate[Date]))
+
+  ## Transformation & visualisation
 
 - Step 8 : Following the initial modeling and creation of high level views on the Overview page, focus proceeded to build Visualizations on the demographic, experience and turnover of Atlas Labs employees during the period in question. 
 - Step 9 : Created cards to visualise oldest and youngest employees across the Atlas Labs cohort.
