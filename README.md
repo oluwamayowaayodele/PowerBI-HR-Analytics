@@ -160,7 +160,7 @@ Relevant Findings
 
     Tenure and Attrition: Employees with shorter tenure, particularly those with less than a year at the company, had the highest attrition rates, highlighting the importance of improving onboarding and early engagement strategies.
 
-    Earning differentials: Mixed ethnic groups on average earned 8% less than their white, and Native American counterparts. Conversely
+    Earning differentials: Mixed ethnic groups on average earned 8% less than their white, and Native American counterparts.
     
 
 
